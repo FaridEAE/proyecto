@@ -1,90 +1,189 @@
-* {
-    border: 0px;
-}
-body {
-    font-family: 'Arial', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@300;400;600;700&family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+*{
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
-}
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 
-header {
-    background-color: #e60023;
-    color: white;
-    text-align: center;
-    padding: 1em;
 }
-
-nav {
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.navbar {
+.nav{
     display: flex;
-    align-items: center;
-    padding: 15px 20px;
+    justify-content: space-between;
+    height: 50px;
+    margin-top: 1%;
 }
-
-.logo {
-    padding-right: 2%;
+.nav > li:hover{
+    color: red;
 }
-
-.nav-links {
+.nav > li{
     list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
+    cursor: pointer;
+    padding: 1%;
 }
 
-.nav-link {
-    margin-right: 20px;
-    text-decoration: none;
-    color: #333;
+.nav > li:nth-child(2){
     font-weight: 600;
 }
-
-.nav-link:hover {
-    color: #e60023;
+.nav > li:nth-child(3){
+    font-weight: 600;       
+}
+.nav > li:nth-child(4){
+    font-weight: 600;       
 }
 
-.search-container {
+.nav > li:nth-child(6){
+    font-size: 20px;
+    color: gray; 
+
+}
+.nav > li:nth-child(6):hover{
+    color: red;
+}
+.search{   
+    width: 70%;
     position: relative;
-    width: 90%; /* Ancho del contenedor, ajusta según tus necesidades */
-    max-width: 100%; /* Ancho máximo de la barra de búsqueda */
+    padding: 1%;
+    
 }
-
-.search-bar {
-    height: 38px;
-    padding: 0px 0px 0px 15px;
+.search > input{
+    
+    border: 0;
+    width: 100%;
+    height: 40px;
     border-radius: 20px;
-    border: 1px solid #ccc;
+    margin-top: -5px;
+    padding: 1%;
+    background-color: rgba(128, 128, 128, 0.212);
+    
+}
+.search > input:focus{
     outline: none;
-    width: 100%; /* Se ajustará automáticamente al ancho del contenedor */
-    transition: background-color 0.3s; /* Transición suave del color de fondo */
 }
 
-.search-bar:focus {
-    background-color: #ccc; /* Cambia el color de fondo al gris cuando la barra de búsqueda tiene foco */
+#icon{
+    align-self: start;
+    display: block;
+    bottom: .5rem;
+    right: 1rem;
+    
+    user-select: none;
+    cursor: pointer;
 }
 
-.search-icon {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #666;
+.notification i{
+    font-size: 20px;
+    
+    color: gray;
+    margin-top: 5px;
+
+}
+.notification i:hover{
+    color: rgba(0, 17, 255, 0.733);
 }
 
-.notification-icon {
-    color: #f00; /* Color rojo para la notificación, puedes cambiarlo según tu diseño */
-    margin-left: 10px; /* Espacio entre la barra de búsqueda y el icono de notificación */
+
+.profile img{
+    object-fit: cover;
+    border-radius: 50%;
 }
 
-.tamano48{
-    width: 48px;
+/* <!-- --------------------nav End -------------------- --> */
+
+.container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill,250px);
+    grid-template-rows: auto;
+    justify-content: center;
+    column-gap: 15px;
+    /* gap: 1%; */
+    /* margin: 2%; */
+
+}
+.container > div{
+    padding: 0;
+    margin: 15px 10px;
+    border-radius: 20px;
+
+}
+.card > iframe{
+    border-radius:25px ;
+}
+.container  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.card-small{
+    grid-row-end: span 26;
+}
+.card-midium{
+    grid-row-end: span 33;
+}
+.card-large{
+    grid-row-end: span 40;
 }
 
-.buttons-container{
-    align-items: center;
-    display: flex
+
+@media all and(min-width: 421px) and (max-width: 768px){
+    .container{
+        grid-template-columns: repeat(auto-fill,200px);
+    }
+    .search{
+        display: none;
+    }
+    .nav > li:nth-child(2){
+        font-weight: 500;
+        font-size: 15px;
+        
+    }
 }
+
+@media all and (min-width:50px) and (max-width: 420px){
+    .container{
+        grid-template-columns: repeat(auto-fill,150px);
+    }
+    .container > div{
+        padding: 0;
+        margin: 8px 5px;
+        border-radius: 20px;
+    
+    }
+    .nav{
+        padding: 2%;
+    }
+    .search > input{
+        /* display: none; */
+        padding: 3%;
+    }
+    .nav > li>img{
+        width: 30px;
+        height: 30px;
+        
+    }
+    .nav > li {
+        font-size: 12px;
+        
+    }
+    .nav > li i{
+        display: none;
+        
+    }
+    .nav > li:nth-child(2){
+        display: none;
+        
+    }
+    .nav > li:nth-child(3){
+        display: none;
+        
+    }
+    .card > iframe{
+        border-radius:25px ;
+    }
+
+}
+    
+
+
