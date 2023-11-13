@@ -61,16 +61,6 @@
     outline: none;
 }
 
-#icon{
-    align-self: start;
-    display: block;
-    bottom: .5rem;
-    right: 1rem;
-    
-    user-select: none;
-    cursor: pointer;
-}
-
 .notification i{
     font-size: 20px;
     
